@@ -3,6 +3,7 @@ package com.venom.mushroomapp.views.MushroomDetails;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +62,7 @@ public class MushroomDetailsFragment
     public void showMushroom(Mushroom Mushroom) {
         mNameTextView.setText(Mushroom.getName());
         mSecretIdentityTextView.setText(Mushroom.getSecretIdentity());
+        mSecretIdentityTextView.setMovementMethod(new ScrollingMovementMethod());
         Picasso.get().load(Mushroom.getImageUrl()).into(mImageView);
     }
 
