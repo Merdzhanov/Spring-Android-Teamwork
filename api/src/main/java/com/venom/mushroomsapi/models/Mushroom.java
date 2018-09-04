@@ -15,6 +15,13 @@ public class Mushroom extends ModelBase {
         this.secretIdentity = secretIdentity;
         this.imageUrl = imageUrl;
     }
+    public Mushroom(int id, String name, String secretIdentity, String imageUrl) {
+        this.setId(id);
+        this.name = name;
+        this.secretIdentity = secretIdentity;
+        this.imageUrl = imageUrl;
+    }
+
 
     public String getName() {
         return name;

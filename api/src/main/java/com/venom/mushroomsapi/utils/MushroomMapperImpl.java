@@ -14,7 +14,7 @@ public class MushroomMapperImpl implements MushroomMapper {
     @Override
     public MushroomViewModel map(Mushroom model) {
         MushroomViewModel vm = new MushroomViewModel();
-        //vm.id = model.getId();
+        vm.id = model.getId();
         vm.name = model.getName();
         vm.secretIdentity = model.getSecretIdentity();
         vm.imageUrl = model.getImageUrl();
@@ -24,6 +24,7 @@ public class MushroomMapperImpl implements MushroomMapper {
     @Override
     public Mushroom map(MushroomViewModel viewModel) {
         Mushroom model = new Mushroom();
+        model.setId(viewModel.id);
         model.setName(viewModel.name);
         model.setSecretIdentity(viewModel.secretIdentity);
         model.setImageUrl(viewModel.imageUrl);
@@ -40,7 +41,7 @@ public class MushroomMapperImpl implements MushroomMapper {
     @Override
     public MushroomDetailsViewModel mapDetails(Mushroom model) {
         MushroomDetailsViewModel vm = new MushroomDetailsViewModel();
-        //vm.id = model.getId();
+        vm.id = model.getId();
         vm.name = model.getName();
         vm.secretIdentity = model.getSecretIdentity();
         vm.imageUrl=model.getImageUrl();
