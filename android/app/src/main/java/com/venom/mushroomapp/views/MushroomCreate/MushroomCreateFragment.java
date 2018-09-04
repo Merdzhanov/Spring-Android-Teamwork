@@ -25,7 +25,11 @@ public class MushroomCreateFragment extends Fragment implements MushroomCreateCo
 
     @BindView(R.id.et_secret_identity)
     EditText mSecretIdentity;
+
+    @BindView(R.id.et_imageUrl)
+    EditText mImageUrl;
     private MushroomCreateContracts.Navigator mNavigator;
+
 
     @Inject
     public MushroomCreateFragment() {
@@ -57,7 +61,7 @@ public class MushroomCreateFragment extends Fragment implements MushroomCreateCo
     public void onMuhroomSaveClicked() {
         String name = mNameEditText.getText().toString();
         String secretIdentity = mSecretIdentity.getText().toString();
-        String imageUrl = "http://idrawproart.com/CapOneMushroom.jpg";
+        String imageUrl = mImageUrl.getText().toString();//"http://idrawproart.com/CapOneMushroom.jpg";
         Mushroom Mushroom = new Mushroom(name, secretIdentity, imageUrl);
         mPresenter.save(Mushroom);
     }
