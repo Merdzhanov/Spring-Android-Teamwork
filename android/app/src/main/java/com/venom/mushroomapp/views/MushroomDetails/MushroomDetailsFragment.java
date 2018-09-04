@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import com.squareup.picasso.Picasso;
 import com.venom.mushroomapp.R;
 import com.venom.mushroomapp.models.Mushroom;
 
@@ -21,6 +24,9 @@ public class MushroomDetailsFragment
         implements MushroomDetailsContracts.View {
 
     private MushroomDetailsContracts.Presenter mPresenter;
+
+    @BindView(R.id.iv_image_view)
+    ImageView mImageView;
 
     @BindView(R.id.tv_name)
     TextView mNameTextView;
@@ -55,6 +61,7 @@ public class MushroomDetailsFragment
     public void showMushroom(Mushroom Mushroom) {
         mNameTextView.setText(Mushroom.getName());
         mSecretIdentityTextView.setText(Mushroom.getSecretIdentity());
+        Picasso.get().load(Mushroom.getImageUrl()).into(mImageView);
     }
 
     @Override
