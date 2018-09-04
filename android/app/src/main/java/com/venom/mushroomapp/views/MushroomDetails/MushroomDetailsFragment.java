@@ -25,13 +25,13 @@ public class MushroomDetailsFragment
 
     private MushroomDetailsContracts.Presenter mPresenter;
 
-    @BindView(R.id.iv_image_view)
+    @BindView(R.id.iv_mushroom_details)
     ImageView mImageView;
 
     @BindView(R.id.tv_name)
     TextView mNameTextView;
 
-    @BindView(R.id.tv_secret_identity)
+    @BindView(R.id.tv_description)
     TextView mSecretIdentityTextView;
 
     @Inject

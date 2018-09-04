@@ -74,8 +74,8 @@ public class MushroomsAdapter extends RecyclerView.Adapter<MushroomsAdapter.Mush
         @BindView(R.id.tv_name)
         TextView mNameTextView;
 
-        @BindView(R.id.tv_secret_identity)
-        TextView mSecretIdentityTextView;
+        /*@BindView(R.id.tv_description)
+        TextView mSecretIdentityTextView;*/
 
         @BindView(R.id.iv_Mushroom)
         ImageView mMushroomImageView;
@@ -89,7 +89,7 @@ public class MushroomsAdapter extends RecyclerView.Adapter<MushroomsAdapter.Mush
 
         void bind(Mushroom Mushroom) {
             mNameTextView.setText(Mushroom.getName());
-            mSecretIdentityTextView.setText(Mushroom.getSecretIdentity());
+            //mSecretIdentityTextView.setText(Mushroom.getSecretIdentity());
             Picasso.get()
                     .load(Mushroom.getImageUrl())
                     .into(mMushroomImageView);
