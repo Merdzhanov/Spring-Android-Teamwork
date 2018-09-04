@@ -87,13 +87,13 @@ public class MushroomsAdapter extends RecyclerView.Adapter<MushroomsAdapter.Mush
             ButterKnife.bind(this, view);
         }
 
-        void bind(Mushroom Mushroom) {
-            mNameTextView.setText(Mushroom.getName());
+        void bind(Mushroom mushroom) {
+            mNameTextView.setText(mushroom.getName());
             //mSecretIdentityTextView.setText(Mushroom.getSecretIdentity());
             Picasso.get()
-                    .load(Mushroom.getImageUrl())
+                    .load(mushroom.getImageUrl())
                     .into(mMushroomImageView);
-            mMushroom = Mushroom;
+            mMushroom = mushroom;
         }
 
         @OnClick

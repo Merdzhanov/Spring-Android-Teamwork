@@ -33,7 +33,7 @@ public class MushroomDetailsFragment
     TextView mNameTextView;
 
     @BindView(R.id.tv_description)
-    TextView mSecretIdentityTextView;
+    TextView mDescriptionTextView;
 
     @Inject
     public MushroomDetailsFragment() {
@@ -61,8 +61,8 @@ public class MushroomDetailsFragment
     @Override
     public void showMushroom(Mushroom Mushroom) {
         mNameTextView.setText(Mushroom.getName());
-        mSecretIdentityTextView.setText(Mushroom.getSecretIdentity());
-        mSecretIdentityTextView.setMovementMethod(new ScrollingMovementMethod());
+        mDescriptionTextView.setText(Mushroom.getSecretIdentity());
+        mDescriptionTextView.setMovementMethod(new ScrollingMovementMethod());
         Picasso.get().load(Mushroom.getImageUrl()).into(mImageView);
     }
 
