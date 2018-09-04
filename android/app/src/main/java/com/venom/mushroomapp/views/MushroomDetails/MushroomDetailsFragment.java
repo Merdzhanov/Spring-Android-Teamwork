@@ -59,11 +59,11 @@ public class MushroomDetailsFragment
     }
 
     @Override
-    public void showMushroom(Mushroom Mushroom) {
-        mNameTextView.setText(Mushroom.getName());
-        mDescriptionTextView.setText(Mushroom.getSecretIdentity());
+    public void showMushroom(Mushroom mushroom) {
+        mNameTextView.setText(mushroom.getName());
+        mDescriptionTextView.setText(mushroom.getDescription());
         mDescriptionTextView.setMovementMethod(new ScrollingMovementMethod());
-        Picasso.get().load(Mushroom.getImageUrl()).into(mImageView);
+        Picasso.get().load(mushroom.getImageUrl()).into(mImageView);
     }
 
     @Override

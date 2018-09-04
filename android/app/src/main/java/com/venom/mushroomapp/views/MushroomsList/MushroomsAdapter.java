@@ -89,7 +89,7 @@ public class MushroomsAdapter extends RecyclerView.Adapter<MushroomsAdapter.Mush
 
         void bind(Mushroom mushroom) {
             mNameTextView.setText(mushroom.getName());
-            //mSecretIdentityTextView.setText(Mushroom.getSecretIdentity());
+            //mSecretIdentityTextView.setText(Mushroom.getDescription());
             Picasso.get()
                     .load(mushroom.getImageUrl())
                     .into(mMushroomImageView);

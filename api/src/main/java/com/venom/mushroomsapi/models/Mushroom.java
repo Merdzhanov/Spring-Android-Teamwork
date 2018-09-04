@@ -5,20 +5,20 @@ import com.venom.mushroomsapi.models.base.ModelBase;
 public class Mushroom extends ModelBase {
     public String imageUrl;
     private String name;
-    private String secretIdentity;
+    private String description;
 
     public Mushroom() {
 
     }
-    public Mushroom(String name, String secretIdentity, String imageUrl) {
+    public Mushroom(String name, String description, String imageUrl) {
         this.name = name;
-        this.secretIdentity = secretIdentity;
+        this.description = description;
         this.imageUrl = imageUrl;
     }
-    public Mushroom(int id, String name, String secretIdentity, String imageUrl) {
+    public Mushroom(int id, String name, String description, String imageUrl) {
         this.setId(id);
         this.name = name;
-        this.secretIdentity = secretIdentity;
+        this.description = description;
         this.imageUrl = imageUrl;
     }
 
@@ -27,8 +27,8 @@ public class Mushroom extends ModelBase {
         return name;
     }
 
-    public String getSecretIdentity() {
-        return secretIdentity;
+    public String getDescription() {
+        return description;
     }
 
 
@@ -41,7 +41,7 @@ public class Mushroom extends ModelBase {
     }
 
     public void setSecretIdentity(String secretIdentity) {
-        this.secretIdentity = secretIdentity;
+        this.description = secretIdentity;
     }
 
     public void setImageUrl(String imageUrl) {

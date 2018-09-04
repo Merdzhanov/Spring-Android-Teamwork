@@ -6,15 +6,15 @@ public class Mushroom implements Serializable {
     public String imageUrl;
     public int id;
     public String name;
-    public String secretIdentity;
+    public String description;
 
     public Mushroom() {
         // public constructor is needed for parsing from/to JSON to work
     }
 
-    public Mushroom(String name, String secretIdentity, String imageUrl) {
+    public Mushroom(String name, String description, String imageUrl) {
         this.name = name;
-        this.secretIdentity = secretIdentity;
+        this.description = description;
         this.imageUrl = imageUrl;
     }
 
@@ -22,8 +22,8 @@ public class Mushroom implements Serializable {
         return name;
     }
 
-    public String getSecretIdentity() {
-        return secretIdentity;
+    public String getDescription() {
+        return description;
     }
 
     public int getId() {

@@ -16,7 +16,7 @@ public class MushroomMapperImpl implements MushroomMapper {
         MushroomViewModel vm = new MushroomViewModel();
         vm.id = model.getId();
         vm.name = model.getName();
-        vm.secretIdentity = model.getSecretIdentity();
+        vm.description = model.getDescription();
         vm.imageUrl = model.getImageUrl();
         return vm;
     }
@@ -26,7 +26,7 @@ public class MushroomMapperImpl implements MushroomMapper {
         Mushroom model = new Mushroom();
         model.setId(viewModel.id);
         model.setName(viewModel.name);
-        model.setSecretIdentity(viewModel.secretIdentity);
+        model.setSecretIdentity(viewModel.description);
         model.setImageUrl(viewModel.imageUrl);
         return model;
     }
@@ -43,7 +43,7 @@ public class MushroomMapperImpl implements MushroomMapper {
         MushroomDetailsViewModel vm = new MushroomDetailsViewModel();
         vm.id = model.getId();
         vm.name = model.getName();
-        vm.secretIdentity = model.getSecretIdentity();
+        vm.description = model.getDescription();
         vm.imageUrl=model.getImageUrl();
         return vm;
     }
