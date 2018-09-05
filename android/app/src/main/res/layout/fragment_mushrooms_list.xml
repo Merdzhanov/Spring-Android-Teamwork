@@ -25,8 +25,7 @@
             android:id="@+id/lv_Mushrooms"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/et_filter"
-            android:visibility="gone" />
+            android:layout_below="@id/et_filter" />
     </RelativeLayout>
 
 </FrameLayout>

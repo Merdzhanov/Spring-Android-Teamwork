@@ -3,6 +3,7 @@ package com.venom.mushroomapp.views.MushroomsList;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,8 @@ public class MushroomsListFragment
     MushroomsAdapter mMushroomsAdapter;
 
     private MushroomsListContracts.Presenter mPresenter;
-    private GridLayoutManager mMushroomsViewLayoutManager;
+    //private GridLayoutManager mMushroomsViewLayoutManager;
+    private LinearLayoutManager mMushroomsViewLayoutManager;
 
     @Inject
     public MushroomsListFragment() {
@@ -58,7 +60,8 @@ public class MushroomsListFragment
         mMushroomsAdapter.setOnMushroomClickListener(this);
 
         mMushroomsView.setAdapter(mMushroomsAdapter);
-        mMushroomsViewLayoutManager = new GridLayoutManager(getContext(), 2);
+        //mMushroomsViewLayoutManager = new GridLayoutManager(getContext(), 2);
+        mMushroomsViewLayoutManager = new LinearLayoutManager(getContext());
         mMushroomsView.setLayoutManager(mMushroomsViewLayoutManager);
         return view;
     }
