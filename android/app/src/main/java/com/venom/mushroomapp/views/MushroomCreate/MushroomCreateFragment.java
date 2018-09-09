@@ -58,10 +58,10 @@ public class MushroomCreateFragment extends Fragment implements MushroomCreateCo
     }
 
     @OnClick(R.id.btn_save)
-    public void onMuhroomSaveClicked() {
+    public void onMushroomSaveClicked() {
         String name = mNameEditText.getText().toString();
         String description = mDescription.getText().toString();
-        String imageUrl = mImageUrl.getText().toString();//"http://idrawproart.com/CapOneMushroom.jpg";
+        String imageUrl = mImageUrl.getText().toString();
         Mushroom mushroom = new Mushroom(name, description, imageUrl);
         mPresenter.save(mushroom);
     }

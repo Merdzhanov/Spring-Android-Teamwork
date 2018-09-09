@@ -32,6 +32,6 @@ public class InMemoryRepository<T> implements Repository<T> {
 
     @Override
     public T getById(int id) throws IOException {
-        return mItems.get(0);
+        return mItems.get(id - 1);
     }
 }

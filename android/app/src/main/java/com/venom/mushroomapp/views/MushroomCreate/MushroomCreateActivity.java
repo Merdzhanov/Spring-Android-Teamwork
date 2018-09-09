@@ -3,6 +3,7 @@ package com.venom.mushroomapp.views.MushroomCreate;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.venom.mushroomapp.Constants;
 import com.venom.mushroomapp.R;
 import com.venom.mushroomapp.views.BaseDrawerActivity;
 import com.venom.mushroomapp.views.MushroomsList.MushroomsListActivity;
@@ -12,7 +13,6 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 
 public class MushroomCreateActivity extends BaseDrawerActivity implements MushroomCreateContracts.Navigator {
-    public static final long IDENTIFIER = 298;
 
     @Inject
     MushroomCreateFragment mView;
@@ -37,7 +37,7 @@ public class MushroomCreateActivity extends BaseDrawerActivity implements Mushro
 
     @Override
     protected long getIdentifier() {
-        return IDENTIFIER;
+        return Constants.CREATE_IDENTIFIER;
     }
 
     @Override

@@ -13,5 +13,5 @@ public interface MushroomsService {
 
     List<Mushroom> getFilteredMushrooms(String pattern) throws IOException;
 
-    Mushroom createMushroom(Mushroom Mushroom) throws IOException;
+    Mushroom createMushroom(Mushroom mushroom) throws IOException;
 }

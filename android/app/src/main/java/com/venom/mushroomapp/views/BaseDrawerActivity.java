@@ -9,9 +9,9 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.venom.mushroomapp.Constants;
 import com.venom.mushroomapp.R;
 import com.venom.mushroomapp.views.MushroomCreate.MushroomCreateActivity;
-import com.venom.mushroomapp.views.MushroomsList.MushroomsListActivity;
 
 import butterknife.BindView;
 import dagger.android.support.DaggerAppCompatActivity;
@@ -27,11 +27,11 @@ public abstract class BaseDrawerActivity extends DaggerAppCompatActivity {
 
     public void setupDrawer() {
         PrimaryDrawerItem listMushroomsItem = new PrimaryDrawerItem()
-                .withIdentifier(MushroomsListActivity.IDENTIFIER)
+                .withIdentifier(Constants.LIST_IDENTIFIER)
                 .withName("Mushrooms");
 
         PrimaryDrawerItem createMushroomItem = new PrimaryDrawerItem()
-                .withIdentifier(MushroomCreateActivity.IDENTIFIER)
+                .withIdentifier(Constants.CREATE_IDENTIFIER)
                 .withIcon(android.R.drawable.btn_plus)
                 .withName("Create Mushroom");
 
@@ -43,32 +43,27 @@ public abstract class BaseDrawerActivity extends DaggerAppCompatActivity {
                         new DividerDrawerItem(),
                         createMushroomItem
                 )
-                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                    @Override
-                    public boolean onItemClick(
-                            View view,
-                            int position,
-                            IDrawerItem drawerItem) {
-                        long identifier = drawerItem.getIdentifier();
+                .withOnDrawerItemClickListener((view, position, drawerItem) ->
+                {
+                    long identifier = drawerItem.getIdentifier();
 
-                        if (getIdentifier() == identifier) {
-                            return false;
-                        }
-
-                        Intent intent = getNextIntent(identifier);
-                        if (intent == null) {
-                            return false;
-                        }
-
-                        startActivity(intent);
-                        return true;
+                    if (getIdentifier() == identifier) {
+                        return false;
                     }
+
+                    Intent intent = getNextIntent(identifier);
+                    if (intent == null) {
+                        return false;
+                    }
+
+                    startActivity(intent);
+                    return true;
                 })
                 .build();
     }
 
     private Intent getNextIntent(long identifier) {
-        if (identifier == MushroomCreateActivity.IDENTIFIER) {
+        if (identifier == Constants.CREATE_IDENTIFIER) {
             return new Intent(this, MushroomCreateActivity.class);
         }
 

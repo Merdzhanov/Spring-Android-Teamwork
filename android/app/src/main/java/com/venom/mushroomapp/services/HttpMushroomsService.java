@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
 public class HttpMushroomsService implements MushroomsService {
     private final Repository<Mushroom> mMushroomsRepository;
 
-    public HttpMushroomsService(Repository<Mushroom> MushroomsRepository) {
-        mMushroomsRepository = MushroomsRepository;
+    public HttpMushroomsService(Repository<Mushroom> mushroomRepository) {
+        mMushroomsRepository = mushroomRepository;
     }
 
     @Override
@@ -31,12 +31,12 @@ public class HttpMushroomsService implements MushroomsService {
         String patternToLower = pattern.toLowerCase();
 
         return getAllMushrooms().stream()
-                .filter(Mushroom -> Mushroom.getName().toLowerCase().contains(patternToLower))
+                .filter(mushroom -> mushroom.getName().toLowerCase().contains(patternToLower))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Mushroom createMushroom(Mushroom Mushroom) throws IOException {
-        return mMushroomsRepository.add(Mushroom);
+    public Mushroom createMushroom(Mushroom mushroom) throws IOException {
+        return mMushroomsRepository.add(mushroom);
     }
 }

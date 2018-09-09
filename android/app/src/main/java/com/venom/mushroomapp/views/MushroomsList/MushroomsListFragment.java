@@ -41,7 +41,6 @@ public class MushroomsListFragment
     MushroomsAdapter mMushroomsAdapter;
 
     private MushroomsListContracts.Presenter mPresenter;
-    //private GridLayoutManager mMushroomsViewLayoutManager;
     private LinearLayoutManager mMushroomsViewLayoutManager;
 
     @Inject
@@ -60,7 +59,6 @@ public class MushroomsListFragment
         mMushroomsAdapter.setOnMushroomClickListener(this);
 
         mMushroomsView.setAdapter(mMushroomsAdapter);
-        //mMushroomsViewLayoutManager = new GridLayoutManager(getContext(), 2);
         mMushroomsViewLayoutManager = new LinearLayoutManager(getContext());
         mMushroomsView.setLayoutManager(mMushroomsViewLayoutManager);
         return view;
@@ -79,9 +77,9 @@ public class MushroomsListFragment
     }
 
     @Override
-    public void showMushrooms(List<Mushroom> Mushrooms) {
+    public void showMushrooms(List<Mushroom> mushrooms) {
         mMushroomsAdapter.clear();
-        mMushroomsAdapter.addAll(Mushrooms);
+        mMushroomsAdapter.addAll(mushrooms);
         mMushroomsAdapter.notifyDataSetChanged();
     }
 
@@ -112,8 +110,8 @@ public class MushroomsListFragment
     }
 
     @Override
-    public void showMushroomDetails(Mushroom Mushroom) {
-        mNavigator.navigateWith(Mushroom);
+    public void showMushroomDetails(Mushroom mushroom) {
+        mNavigator.navigateWith(mushroom);
     }
 
     void setNavigator(MushroomsListContracts.Navigator navigator) {
@@ -127,7 +125,7 @@ public class MushroomsListFragment
     }
 
     @Override
-    public void onClick(Mushroom Mushroom) {
-        mPresenter.selectMushroom(Mushroom);
+    public void onClick(Mushroom mushroom) {
+        mPresenter.selectMushroom(mushroom);
     }
 }

@@ -4,6 +4,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.venom.mushroomapp.Constants;
 import com.venom.mushroomapp.R;
 import com.venom.mushroomapp.models.Mushroom;
 import com.venom.mushroomapp.views.BaseDrawerActivity;
@@ -18,7 +19,6 @@ import butterknife.ButterKnife;
 public class MushroomsListActivity
         extends BaseDrawerActivity
         implements MushroomsListContracts.Navigator {
-    public static final long IDENTIFIER = 49;
 
     @Inject
     MushroomsListFragment mMushroomsListFragment;
@@ -62,22 +62,22 @@ public class MushroomsListActivity
 
     @Override
     protected long getIdentifier() {
-        return IDENTIFIER;
+        return Constants.LIST_IDENTIFIER;
     }
 
     @Override
-    public void navigateWith(Mushroom Mushroom) {
+    public void navigateWith(Mushroom mushroom) {
         if (isPhone()) {
             Intent intent = new Intent(
                     this,
                     MushroomDetailsActivity.class
             );
 
-            intent.putExtra(MushroomDetailsActivity.EXTRA_KEY, Mushroom);
+            intent.putExtra(Constants.EXTRA_KEY, mushroom);
 
             startActivity(intent);
         } else {
-            mMushroomDetailsPresenter.setMushroomId(Mushroom.getId());
+            mMushroomDetailsPresenter.setMushroomId(mushroom.getId());
             mMushroomDetailsPresenter.loadMushroom();
         }
     }

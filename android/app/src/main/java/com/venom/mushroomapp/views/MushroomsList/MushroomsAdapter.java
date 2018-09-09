@@ -33,15 +33,7 @@ public class MushroomsAdapter extends RecyclerView.Adapter<MushroomsAdapter.Mush
     @NonNull
     @Override
     public MushroomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        /*View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.mushroom_item, parent, false);
-        int height = parent.getMeasuredHeight() / 3;
-        ViewGroup.LayoutParams lp = view.getLayoutParams();
-        lp.height = height;
-        view.setLayoutParams(lp);
-        view.setMinimumHeight(height);*/
-
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.test_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mushroom_item, parent, false);
         return new MushroomViewHolder(view);
     }
 
@@ -73,19 +65,10 @@ public class MushroomsAdapter extends RecyclerView.Adapter<MushroomsAdapter.Mush
     }
 
     public static class MushroomViewHolder extends RecyclerView.ViewHolder {
-        /*@BindView(R.id.tv_name)
+        @BindView(R.id.tv_name_mushroom)
         TextView mNameTextView;
 
-        @BindView(R.id.iv_Mushroom)
-        ImageView mMushroomImageView;*/
-
-        /*@BindView(R.id.tv_description)
-        TextView mSecretIdentityTextView;*/
-
-        @BindView(R.id.tv_name_test)
-        TextView mNameTextView;
-
-        @BindView(R.id.iv_test)
+        @BindView(R.id.iv_mushroom)
         ImageView mMushroomImageView;
 
         private OnMushroomClickListener mOnClickListener;
@@ -98,7 +81,6 @@ public class MushroomsAdapter extends RecyclerView.Adapter<MushroomsAdapter.Mush
 
         void bind(Mushroom mushroom) {
             mNameTextView.setText(mushroom.getName());
-            //mSecretIdentityTextView.setText(Mushroom.getDescription());
             Picasso.get()
                     .load(mushroom.getImageUrl())
                     .into(mMushroomImageView);

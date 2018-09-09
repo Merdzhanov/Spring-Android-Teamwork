@@ -5,7 +5,7 @@ import com.venom.mushroomapp.models.Mushroom;
 
 public interface MushroomDetailsContracts {
     interface View {
-        void showMushroom(Mushroom Mushroom);
+        void showMushroom(Mushroom mushroom);
 
         void setPresenter(Presenter presenter);
 

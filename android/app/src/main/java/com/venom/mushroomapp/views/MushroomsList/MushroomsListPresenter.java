@@ -22,14 +22,13 @@ public class MushroomsListPresenter
 
     @Inject
     public MushroomsListPresenter(
-            MushroomsService MushroomsService,
+            MushroomsService mushroomsService,
             SchedulerProvider schedulerProvider) {
-        mMushroomsService = MushroomsService;
+        mMushroomsService = mushroomsService;
         mSchedulerProvider = schedulerProvider;
     }
 
     @Override
-    // same as // setView(MushroomsListContracts.View view)
     public void subscribe(MushroomsListContracts.View view) {
         mView = view;
     }
@@ -39,8 +38,8 @@ public class MushroomsListPresenter
         mView.showLoading();
         Disposable observable = Observable
                 .create((ObservableOnSubscribe<List<Mushroom>>) emitter -> {
-                    List<Mushroom> Mushrooms = mMushroomsService.getAllMushrooms();
-                    emitter.onNext(Mushrooms);
+                    List<Mushroom> mushrooms = mMushroomsService.getAllMushrooms();
+                    emitter.onNext(mushrooms);
                     emitter.onComplete();
                 })
                 .subscribeOn(mSchedulerProvider.background())
@@ -57,8 +56,8 @@ public class MushroomsListPresenter
         mView.showLoading();
         Disposable observable = Observable
                 .create((ObservableOnSubscribe<List<Mushroom>>) emitter -> {
-                    List<Mushroom> Mushrooms = mMushroomsService.getFilteredMushrooms(pattern);
-                    emitter.onNext(Mushrooms);
+                    List<Mushroom> mushrooms = mMushroomsService.getFilteredMushrooms(pattern);
+                    emitter.onNext(mushrooms);
                     emitter.onComplete();
                 })
                 .subscribeOn(mSchedulerProvider.background())
@@ -69,15 +68,15 @@ public class MushroomsListPresenter
     }
 
     @Override
-    public void selectMushroom(Mushroom Mushroom) {
-        mView.showMushroomDetails(Mushroom);
+    public void selectMushroom(Mushroom mushroom) {
+        mView.showMushroomDetails(mushroom);
     }
 
-    private void presentMushroomsToView(List<Mushroom> Mushrooms) {
-        if (Mushrooms.isEmpty()) {
+    private void presentMushroomsToView(List<Mushroom> mushrooms) {
+        if (mushrooms.isEmpty()) {
             mView.showEmptyMushroomsList();
         } else {
-            mView.showMushrooms(Mushrooms);
+            mView.showMushrooms(mushrooms);
         }
     }
 }

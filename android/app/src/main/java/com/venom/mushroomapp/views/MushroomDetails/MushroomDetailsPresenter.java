@@ -21,10 +21,10 @@ public class MushroomDetailsPresenter
 
     @Inject
     public MushroomDetailsPresenter(
-            MushroomsService MushroomsService,
+            MushroomsService mushroomsService,
             SchedulerProvider schedulerProvider
     ) {
-        mMushroomsService = MushroomsService;
+        mMushroomsService = mushroomsService;
         mSchedulerProvider = schedulerProvider;
     }
 
@@ -38,8 +38,8 @@ public class MushroomDetailsPresenter
         mView.showLoading();
         Disposable observable = Observable
                 .create((ObservableOnSubscribe<Mushroom>) emitter -> {
-                    Mushroom Mushroom = mMushroomsService.getDetailsById(mMushroomId);
-                    emitter.onNext(Mushroom);
+                    Mushroom mushroom = mMushroomsService.getDetailsById(mMushroomId);
+                    emitter.onNext(mushroom);
                     emitter.onComplete();
                 })
                 .subscribeOn(mSchedulerProvider.background())
@@ -49,7 +49,7 @@ public class MushroomDetailsPresenter
     }
 
     @Override
-    public void setMushroomId(int MushroomId) {
-        mMushroomId = MushroomId;
+    public void setMushroomId(int mushroomId) {
+        mMushroomId = mushroomId;
     }
 }

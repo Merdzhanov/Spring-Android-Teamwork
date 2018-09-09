@@ -25,8 +25,7 @@ public class HttpRepository<T> implements Repository<T> {
 
     @Override
     public List<T> getAll() throws IOException {
-        String jsonArray = null;
-        jsonArray = mHttpRequester.get(mServerUrl);
+        String jsonArray = mHttpRequester.get(mServerUrl);
         return mJsonParser.fromJsonArray(jsonArray);
     }
 

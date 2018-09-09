@@ -9,7 +9,7 @@ public interface MushroomsListContracts {
     interface View {
         void setPresenter(Presenter presenter);
 
-        void showMushrooms(List<Mushroom> Mushrooms);
+        void showMushrooms(List<Mushroom> mushrooms);
 
         void showEmptyMushroomsList();
 
@@ -19,7 +19,7 @@ public interface MushroomsListContracts {
 
         void hideLoading();
 
-        void showMushroomDetails(Mushroom Mushroom);
+        void showMushroomDetails(Mushroom mushroom);
     }
 
     interface Presenter {
@@ -29,10 +29,10 @@ public interface MushroomsListContracts {
 
         void filterMushrooms(String pattern);
 
-        void selectMushroom(Mushroom Mushroom);
+        void selectMushroom(Mushroom mushroom);
     }
 
     interface Navigator {
-        void navigateWith(Mushroom Mushroom);
+        void navigateWith(Mushroom mushroom);
     }
 }
