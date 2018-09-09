@@ -13,9 +13,9 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class MushroomsListModule {
     @FragmentScoped
     @ContributesAndroidInjector
-    abstract MushroomsListFragment MushroomsListFragment();
+    abstract MushroomsListFragment mushroomsListFragment();
 
     @ActivityScoped
     @Binds
-    abstract MushroomsListContracts.Presenter MushroomsListPresenter(MushroomsListPresenter presenter);
+    abstract MushroomsListContracts.Presenter mushroomsListPresenter(MushroomsListPresenter presenter);
 }

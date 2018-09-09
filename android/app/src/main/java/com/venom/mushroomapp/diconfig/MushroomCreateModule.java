@@ -12,10 +12,10 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class MushroomCreateModule {
     @FragmentScoped
     @ContributesAndroidInjector
-    abstract MushroomCreateFragment MushroomCreateFragment();
+    abstract MushroomCreateFragment mushroomCreateFragment();
 
     @ActivityScoped
     @Binds
-    abstract MushroomCreateContracts.Presenter MushroomCreatePresenter(MushroomCreatePresenter presenter);
+    abstract MushroomCreateContracts.Presenter mushroomCreatePresenter(MushroomCreatePresenter presenter);
 }
 

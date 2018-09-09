@@ -14,17 +14,17 @@ public abstract class ActivityBindingModule {
     @ContributesAndroidInjector(
             modules = MushroomsListModule.class
     )
-    abstract MushroomsListActivity MushroomsListActivity();
+    abstract MushroomsListActivity mushroomsListActivity();
 
     @ActivityScoped
     @ContributesAndroidInjector(
             modules = MushroomDetailsModule.class
     )
-    abstract MushroomDetailsActivity MushroomDetailsActivity();
+    abstract MushroomDetailsActivity mushroomDetailsActivity();
 
     @ActivityScoped
     @ContributesAndroidInjector(
             modules = MushroomCreateModule.class
     )
-    abstract MushroomCreateActivity MushroomCreateActivity();
+    abstract MushroomCreateActivity mushroomCreateActivity();
 }
