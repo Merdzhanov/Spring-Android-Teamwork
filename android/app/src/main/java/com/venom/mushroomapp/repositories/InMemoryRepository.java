@@ -7,10 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created to preserve battery while development
- * @param <T>
- */
 public class InMemoryRepository<T> implements Repository<T> {
 
     private final List<T> mItems;

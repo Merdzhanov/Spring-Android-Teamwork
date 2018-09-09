@@ -40,8 +40,8 @@ public class Mushroom extends ModelBase {
         this.name = name;
     }
 
-    public void setSecretIdentity(String secretIdentity) {
-        this.description = secretIdentity;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setImageUrl(String imageUrl) {

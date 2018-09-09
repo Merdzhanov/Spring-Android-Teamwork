@@ -7,7 +7,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_green_dark">
 
         <TextView
             android:id="@+id/tv_name"
@@ -15,7 +16,9 @@
             android:layout_height="wrap_content"
             android:text="@string/mushroom_title"
             android:textAlignment="center"
-            android:textSize="29sp" />
+            android:textColor="@android:color/black"
+            android:textSize="29sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/iv_mushroom_details"
@@ -25,6 +28,7 @@
             android:layout_below="@+id/tv_name" />
 
         <TextView
+            android:padding="4dp"
             android:id="@+id/tv_description"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,6 +36,7 @@
             android:layout_below="@+id/iv_mushroom_details"
             android:scrollbars="vertical"
             android:text="@string/mushroom_description"
+            android:textColor="@android:color/black"
             android:textSize="20sp" />
 
     </RelativeLayout>

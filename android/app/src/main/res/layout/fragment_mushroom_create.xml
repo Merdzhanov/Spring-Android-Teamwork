@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/holo_orange_dark"
         android:orientation="vertical">
 
         <EditText
@@ -20,7 +21,7 @@
             android:id="@+id/et_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter secret identity" />
+            android:hint="Enter description" />
 
         <EditText
             android:id="@+id/et_imageUrl"
@@ -32,6 +33,6 @@
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save"/>
+            android:text="Save" />
     </LinearLayout>
 </FrameLayout>

@@ -26,7 +26,7 @@ public class MushroomMapperImpl implements MushroomMapper {
         Mushroom model = new Mushroom();
         model.setId(viewModel.id);
         model.setName(viewModel.name);
-        model.setSecretIdentity(viewModel.description);
+        model.setDescription(viewModel.description);
         model.setImageUrl(viewModel.imageUrl);
         return model;
     }

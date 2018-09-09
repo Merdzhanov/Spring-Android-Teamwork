@@ -2,7 +2,6 @@ package com.venom.mushroomapp.views.MushroomsList;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -28,7 +27,7 @@ public class MushroomsListFragment
         implements MushroomsListContracts.View, MushroomsAdapter.OnMushroomClickListener {
     private MushroomsListContracts.Navigator mNavigator;
 
-    @BindView(R.id.lv_Mushrooms)
+    @BindView(R.id.rv_mushrooms)
     RecyclerView mMushroomsView;
 
     @BindView(R.id.loading)
