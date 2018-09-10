@@ -19,9 +19,9 @@ public class MushroomCreatePresenter implements MushroomCreateContracts.Presente
 
     @Inject
     public MushroomCreatePresenter(
-            MushroomsService MushroomsService,
+            MushroomsService mushroomsService,
             SchedulerProvider schedulerProvider) {
-        mMushroomsService = MushroomsService;
+        mMushroomsService = mushroomsService;
         mSchedulerProvider = schedulerProvider;
     }
 
@@ -36,11 +36,11 @@ public class MushroomCreatePresenter implements MushroomCreateContracts.Presente
     }
 
     @Override
-    public void save(Mushroom Mushroom) {
+    public void save(Mushroom mushroom) {
         mView.showLoading();
         Disposable disposable = Observable
                 .create((ObservableOnSubscribe<Mushroom>) emitter -> {
-                    Mushroom createdMushroom = mMushroomsService.createMushroom(Mushroom);
+                    Mushroom createdMushroom = mMushroomsService.createMushroom(mushroom);
                     emitter.onNext(createdMushroom);
                     emitter.onComplete();
                 })

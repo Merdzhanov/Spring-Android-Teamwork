@@ -25,9 +25,9 @@ public class RepositoriesModule {
 //    public Repository<Mushroom> MushroomRepository() {
 //        Repository<Mushroom> repository = new InMemoryRepository<>();
 //        List<Mushroom> initialMushrooms = Arrays.asList(
-//                new Mushroom("Boletus edulis Bull.", "Обикновена манатарка", "http://manatarka.org/files/2011/12/Boletusedulis4.jpg"),
-//                new Mushroom("Алпийска чашка", "Microstoma protractum (Fr.) Kanouse", "http://manatarka.org/files/2016/03/Microstomaprotractum1.jpg"),
-//                new Mushroom("Виолетов вълчи зъб", "Inocybe geophylla (Bull.) P. Kumm.", "http://manatarka.org/files/2018/05/Inocybegeophylla7.jpg")
+//                new Mushroom(1, "Boletus edulis Bull.", "Обикновена манатарка", "http://manatarka.org/files/2011/12/Boletusedulis4.jpg"),
+//                new Mushroom(2, "Алпийска чашка", "Microstoma protractum (Fr.) Kanouse", "http://manatarka.org/files/2016/03/Microstomaprotractum1.jpg"),
+//                new Mushroom(3, "Виолетов вълчи зъб", "Inocybe geophylla (Bull.) P. Kumm.", "http://manatarka.org/files/2018/05/Inocybegeophylla7.jpg")
 //        );
 //
 //        initialMushrooms.forEach(s -> {

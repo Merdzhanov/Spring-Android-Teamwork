@@ -11,5 +11,5 @@ public interface GenericRepository<T extends ModelBase> {
 
     T findById(int id);
 
-    void add(T superhero);
+    void add(T mushroom);
 }

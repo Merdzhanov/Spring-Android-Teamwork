@@ -23,7 +23,7 @@ public interface MushroomCreateContracts {
 
         void unsubscribe();
 
-        void save(Mushroom Mushroom);
+        void save(Mushroom mushroom);
     }
 
     public interface Navigator {

@@ -12,6 +12,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.venom.mushroomapp.Constants;
 import com.venom.mushroomapp.R;
 import com.venom.mushroomapp.views.MushroomCreate.MushroomCreateActivity;
+import com.venom.mushroomapp.views.MushroomsList.MushroomsListActivity;
 
 import butterknife.BindView;
 import dagger.android.support.DaggerAppCompatActivity;
@@ -28,7 +29,8 @@ public abstract class BaseDrawerActivity extends DaggerAppCompatActivity {
     public void setupDrawer() {
         PrimaryDrawerItem listMushroomsItem = new PrimaryDrawerItem()
                 .withIdentifier(Constants.LIST_IDENTIFIER)
-                .withName("Mushrooms");
+                .withIcon(android.R.drawable.ic_input_get)
+                .withName("Home");
 
         PrimaryDrawerItem createMushroomItem = new PrimaryDrawerItem()
                 .withIdentifier(Constants.CREATE_IDENTIFIER)
@@ -65,6 +67,10 @@ public abstract class BaseDrawerActivity extends DaggerAppCompatActivity {
     private Intent getNextIntent(long identifier) {
         if (identifier == Constants.CREATE_IDENTIFIER) {
             return new Intent(this, MushroomCreateActivity.class);
+        }
+        else if (identifier == Constants.LIST_IDENTIFIER)
+        {
+            return new Intent(this, MushroomsListActivity.class);
         }
 
         return null;
